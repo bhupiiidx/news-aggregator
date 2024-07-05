@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Container, CssBaseline } from "@mui/material";
-import Header from "./components/Header";
-import SearchBar from "./components/SearchBar";
-import Filter from "./components/Filter";
-import ArticleList from "./components/ArticleList";
+import Header from "./Components/Header";
+import SearchBar from "./Components/SearchBar";
+import Filter from "./Components/Filter";
+import ArticleList from "./Components/ArticleList";
 import { fetchArticles } from "./services/api";
 
 const App = () => {
@@ -12,7 +12,7 @@ const App = () => {
 
 	const handleSearch = async (keyword) => {
 		const response = await fetchArticles(keyword, filters);
-		setArticles(response.data.articles);
+		setArticles(response.data);
 	};
 
 	const handleFilterChange = (name, value) => {
@@ -28,6 +28,7 @@ const App = () => {
 
 	useEffect(() => {
 		handleSearch("");
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [filters]);
 
 	return (

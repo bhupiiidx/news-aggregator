@@ -9,16 +9,7 @@ const Filter = ({ filters, onFilterChange, onClearFilters }) => {
 
 	return (
 		<Box display="flex" justifyContent="space-around" my={2}>
-			<FormControl variant="outlined">
-				<InputLabel>Date</InputLabel>
-				<Select name="date" value={filters.date} onChange={handleChange} label="Date">
-					<MenuItem value="">All</MenuItem>
-					<MenuItem value="today">Today</MenuItem>
-					<MenuItem value="week">This Week</MenuItem>
-					<MenuItem value="month">This Month</MenuItem>
-				</Select>
-			</FormControl>
-			<FormControl variant="outlined">
+			<FormControl sx={{ minWidth: "100px" }} variant="outlined">
 				<InputLabel>Category</InputLabel>
 				<Select name="category" value={filters.category} onChange={handleChange} label="Category">
 					<MenuItem value="">All</MenuItem>
@@ -27,13 +18,14 @@ const Filter = ({ filters, onFilterChange, onClearFilters }) => {
 					<MenuItem value="sports">Sports</MenuItem>
 				</Select>
 			</FormControl>
-			<FormControl variant="outlined">
+			<FormControl sx={{ minWidth: "100px" }} variant="outlined">
 				<InputLabel>Source</InputLabel>
 				<Select name="source" value={filters.source} onChange={handleChange} label="Source">
-					<MenuItem value="">All</MenuItem>
-					<MenuItem value="bbc-news">BBC News</MenuItem>
-					<MenuItem value="the-verge">The Verge</MenuItem>
-					<MenuItem value="cnn">CNN</MenuItem>
+					<MenuItem value="NEWSAPI" selected>
+						NewsApi
+					</MenuItem>
+					<MenuItem value="THEGUARDIANS">The Guardians</MenuItem>
+					<MenuItem value="NEWYORKTIMES">New York Times</MenuItem>
 				</Select>
 			</FormControl>
 			<Button variant="contained" color="secondary" onClick={onClearFilters}>
