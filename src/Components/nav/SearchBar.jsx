@@ -12,7 +12,7 @@ const SearchBar = () => {
 	const keyword = useSelector((state) => state.filter.keyword);
 
 	const handleSearch = () => {
-		navigate.push('/search-results');
+		navigate('/search-results');
 	};
 	return (
 		<FormControl fullWidth sx={{ m: 1 }} variant="standard">
@@ -28,10 +28,7 @@ const SearchBar = () => {
 						</IconButton>
 					</InputAdornment>
 				}
-				onChange={(e) => {
-					dispatch(setKeyword(e.target.value))
-					console.log('e.target.value', e.target.value);
-				}}
+				onChange={(e) => dispatch(setKeyword(e.target.value))}
 				value={keyword}
 				label="Search for articles"
 			/>
