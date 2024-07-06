@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { setUserDetails } from "./redux/slices/userSlice";
 import RecommendedForYou from "./Components/pages/RecomendedForYou";
 import SearchResults from "./Components/pages/SearchResults";
-import RouteHeader from "./Components/nav/RouteHeader";
 
 const App = () => {
 	const dispatch = useDispatch();
@@ -19,7 +18,6 @@ const App = () => {
 		<Router>
 			<CssBaseline />
 			<Header />
-			<RouteHeader />
 			<Container>
 				<Routes>
 					<Route exact path="/" element={<News />} />

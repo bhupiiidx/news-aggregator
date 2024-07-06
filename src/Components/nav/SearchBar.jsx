@@ -4,7 +4,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useDispatch, useSelector } from 'react-redux';
 import { setKeyword } from "../../redux/slices/querySlice";
 import { useNavigate } from 'react-router-dom';
-import "./searchBar.css"
 
 
 const SearchBar = () => {
@@ -16,8 +15,9 @@ const SearchBar = () => {
 		navigate.push('/search-results');
 	};
 	return (
-		<FormControl sx={{ m: 1, width: '25ch' }} variant="standard">
+		<FormControl fullWidth sx={{ m: 1 }} variant="standard">
 			<Input
+				fullWidth
 				id="standard-adornment-password"
 				endAdornment={
 					<InputAdornment position="end">

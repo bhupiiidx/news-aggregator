@@ -121,5 +121,5 @@ export const fetchArticles = async (keyword = "", filters = {}) => {
 		data = { data: [...data1.data, ...data2.data, ...data3.data], status: true, error: "" };
 	}
 	return data;
-	// return axios.get("https://newsapi.org/v2/top-headlines?apiKey=56444de6857e4a90839e629ac14379c9&category=business&pages=1");
+	// return { data: [], status: true, error: "" };
 };

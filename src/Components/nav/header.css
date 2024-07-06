@@ -1,0 +1,42 @@
+.forYou {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 20px;
+}
+.forYou a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	color: black;
+}
+.headerSearchBar {
+	background-color: blue;
+}
+
+.iconWrapper,
+.userWrapper {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+}
+
+.iconWrapper {
+	background: #fce4ec; /* Pink */
+	flex-direction: column; /* On small screens */
+}
+
+.userWrapper {
+	margin-left: 2rem; /* Equivalent to mx: 4 */
+	align-self: normal; /* On small screens */
+}
+
+@media (min-width: 768px) {
+	.iconWrapper {
+		flex-direction: row; /* On medium screens and larger */
+	}
+	.userWrapper {
+		align-self: center; /* On medium screens and larger */
+	}
+}
