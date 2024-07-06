@@ -3,9 +3,8 @@ import { CssBaseline, Container } from "@mui/material";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Components/nav/Header";
 import News from "./Components/pages/News";
-// import RecomendedForYou from "./Components/RecomendedForYou";
 import { useDispatch } from "react-redux";
-import { setUserDetails } from "./slices/userSlice";
+import { setUserDetails } from "./redux/slices/userSlice";
 import RecommendedForYou from "./Components/pages/RecomendedForYou";
 import SearchResults from "./Components/pages/SearchResults";
 import RouteHeader from "./Components/nav/RouteHeader";
@@ -14,7 +13,6 @@ const App = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		// Simulating setting user details
 		dispatch(setUserDetails({ name: "John Doe", email: "john.doe@example.com" }));
 	}, [dispatch]);
 	return (

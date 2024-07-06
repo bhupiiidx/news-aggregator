@@ -2,7 +2,7 @@ import React from "react";
 import { FormControl, InputAdornment, IconButton, Input } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import { useDispatch, useSelector } from 'react-redux';
-import { setKeyword } from "../../slices/querySlice";
+import { setKeyword } from "../../redux/slices/querySlice";
 import { useNavigate } from 'react-router-dom';
 import "./searchBar.css"
 

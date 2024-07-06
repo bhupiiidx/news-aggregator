@@ -1,7 +1,7 @@
 import React from "react";
 import { FormControl, InputLabel, Select, MenuItem, Box, Button } from "@mui/material";
 import { useDispatch, useSelector } from 'react-redux';
-import { onClearFilters, setApiVendor, setCategory } from "../../slices/querySlice";
+import { onClearFilters, setApiVendor, setCategory } from "../../redux/slices/querySlice";
 
 const Filter = () => {
 	const { apiVendor, category } = useSelector((state) => state.filter);
@@ -31,7 +31,7 @@ const Filter = () => {
 					<MenuItem value="NEWYORKTIMES">New York Times</MenuItem>
 				</Select>
 			</FormControl>
-			<Button variant="contained" size="small" color="error" onClick={dispatch(onClearFilters())}>
+			<Button variant="contained" size="small" color="error" onClick={() => dispatch(onClearFilters())}>
 				Clear Filters
 			</Button>
 		</Box>

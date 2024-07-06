@@ -2,7 +2,7 @@ import React from "react";
 import { Grid } from "@mui/material";
 import ArticleCard from "./ArticleCard";
 import { useDispatch, useSelector } from 'react-redux';
-import { setRelevantCategory } from '../../slices/recomendedSlice';
+import { setRelevantCategory } from '../../redux/slices/recomendedSlice';
 
 const ArticleList = ({ articles }) => {
 	const dispatch = useDispatch();

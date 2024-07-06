@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import reducers from "../reducers/recomendedReducer";
 
 const recomendedSlice = createSlice({
 	name: "recomended",
@@ -7,17 +8,7 @@ const recomendedSlice = createSlice({
 		relevantCategory: [],
 		loading: "",
 	},
-	reducers: {
-		setRecomendedArticles: (state, action) => {
-			state.recomendedArticles = action.payload;
-		},
-		setRelevantCategory: (state, action) => {
-			!state.relevantCategory.includes(action.payload) && state.relevantCategory.push(action.payload);
-		},
-		setLoading: (state, action) => {
-			state.loading = action.payload;
-		},
-	},
+	reducers,
 });
 
 export const { setRecomendedArticles, setRelevantCategory, setLoading } = recomendedSlice.actions;
