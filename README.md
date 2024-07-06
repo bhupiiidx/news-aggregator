@@ -28,9 +28,9 @@ Runs the app in the development mode.
 ## `Filter`
 
 -   Filter based on category
-    ![Selecting Filter](https://raw.githubusercontent.com/bhupiiidx/news-aggregator/main/src/Screenshot/HomeScreen.png)
+    ![Selecting Filter](https://raw.githubusercontent.com/bhupiiidx/news-aggregator/main/src/Screenshot/Category.png)
 
 ## `Source Change`
 
 -   Source Change means getting articles from multiple vendor NEWSAPI, THEGUARDIANS, NEWYORKTIMES
-    ![Selecting Source](https://raw.githubusercontent.com/bhupiiidx/news-aggregator/main/src/Screenshot/HomeScreen.png)
+    ![Selecting Source](https://raw.githubusercontent.com/bhupiiidx/news-aggregator/main/src/Screenshot/Source.png)
