@@ -1,21 +1,33 @@
 import React from 'react';
-import ToggleButton from '@mui/material/ToggleButton';
+import { Stack, IconButton, Badge } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 
 
 export default function StandaloneToggleButton() {
-    const [selected, setSelected] = React.useState(false);
+    const category = useSelector((state) => state.recomended.relevantCategory);
+    const navigate = useNavigate();
 
     return (
-        <ToggleButton
-            value="check"
-            selected={selected}
-            onChange={() => {
-                setSelected(!selected);
-            }}
-            sx={{ border: "none", borderRadius: "50% 10% 50% 10%" }}
-        >
-            <AccountCircleIcon size="large" />
-        </ToggleButton>
+        <Stack direction="row" spacing={3} mr={2}>
+            <IconButton
+                value="check"
+                onClick={() => navigate("/for-you")}
+                sx={{ border: "none", borderRadius: "50%" }}
+            >
+                <Badge badgeContent={category?.length || 0} color="primary">
+                    <FavoriteBorderIcon color="action" />
+                </Badge>
+            </IconButton>
+            <IconButton
+                value="check"
+                onChange={() => { }}
+                sx={{ border: "none", borderRadius: "50%" }}
+            >
+                <AccountCircleIcon size="large" />
+            </IconButton>
+        </Stack>
     );
 }

@@ -4,12 +4,14 @@
 	align-items: center;
 	margin-right: 20px;
 }
+a {
+	text-decoration: none;
+	color: black;
+}
 .forYou a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	text-decoration: none;
-	color: black;
 }
 .headerSearchBar {
 	background-color: blue;
