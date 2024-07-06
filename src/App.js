@@ -1,46 +1,35 @@
-import React, { useState, useEffect } from "react";
-import { Container, CssBaseline } from "@mui/material";
-import Header from "./Components/Header";
-import SearchBar from "./Components/SearchBar";
-import Filter from "./Components/Filter";
-import ArticleList from "./Components/ArticleList";
-import { fetchArticles } from "./services/api";
+import React, { useEffect } from "react";
+import { CssBaseline, Container } from "@mui/material";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./Components/nav/Header";
+import News from "./Components/pages/News";
+// import RecomendedForYou from "./Components/RecomendedForYou";
+import { useDispatch } from "react-redux";
+import { setUserDetails } from "./slices/userSlice";
+import RecommendedForYou from "./Components/pages/RecomendedForYou";
+import SearchResults from "./Components/pages/SearchResults";
+import RouteHeader from "./Components/nav/RouteHeader";
 
 const App = () => {
-	const [articles, setArticles] = useState([]);
-	const [filters, setFilters] = useState({ date: "", category: "", source: "" });
-
-	const handleSearch = async (keyword) => {
-		const response = await fetchArticles(keyword, filters);
-		setArticles(response.data);
-	};
-
-	const handleFilterChange = (name, value) => {
-		setFilters((prevFilters) => ({
-			...prevFilters,
-			[name]: value,
-		}));
-	};
-
-	const handleClearFilters = () => {
-		setFilters({ date: "", category: "", source: "" });
-	};
+	const dispatch = useDispatch();
 
 	useEffect(() => {
-		handleSearch("");
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [filters]);
-
+		// Simulating setting user details
+		dispatch(setUserDetails({ name: "John Doe", email: "john.doe@example.com" }));
+	}, [dispatch]);
 	return (
-		<div>
+		<Router>
 			<CssBaseline />
 			<Header />
+			<RouteHeader />
 			<Container>
-				<SearchBar onSearch={handleSearch} />
-				<Filter filters={filters} onFilterChange={handleFilterChange} onClearFilters={handleClearFilters} />
-				<ArticleList articles={articles} />
+				<Routes>
+					<Route exact path="/" element={<News />} />
+					<Route path="/for-you" element={<RecommendedForYou />} />
+					<Route path="/search-results" element={<SearchResults />} />
+				</Routes>
 			</Container>
-		</div>
+		</Router>
 	);
 };
 
